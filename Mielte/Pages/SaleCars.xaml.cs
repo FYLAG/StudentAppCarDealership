@@ -22,5 +22,53 @@ namespace Mielte.Pages
         {
             InitializeComponent();
         }
+
+        Brush color0 = new SolidColorBrush(Color.FromRgb(0, 0, 0)); // создание чёрного цвета
+        Brush colorOrange = new SolidColorBrush(Color.FromRgb(255, 128, 0)); // создание оранжевого цвета
+
+        private void ButtonBack_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative)); // переход на страницу авторизации
+        }
+
+        private void ButtonBack_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ButtonBack.Stroke = colorOrange; // обводка блока оранжевого цвета
+        }
+
+        private void ButtonBack_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ButtonBack.Stroke = color0; // обводка блока в чёрного цвета
+        }
+
+        private void ButtonCatalog_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/CatalogCars.xaml", UriKind.Relative)); // переход на страницу каталога автомобилей
+        }
+
+        private void ButtonCatalog_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ButtonCatalog.Stroke = colorOrange; // обводка блока оранжевого цвета
+        }
+
+        private void ButtonCatalog_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ButtonCatalog.Stroke = color0; // обводка блока в чёрного цвета
+        }
+
+        private void ButtonBuy_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/NewTreatySale.xaml", UriKind.Relative)); // переход на страницу покупки
+        }
+
+        private void ButtonBuy_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ButtonBuy.Stroke = colorOrange; // обводка блока оранжевого цвета
+        }
+
+        private void ButtonBuy_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ButtonBuy.Stroke = color0; // обводка блока в чёрного цвета
+        }
     }
 }

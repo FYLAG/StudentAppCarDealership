@@ -22,5 +22,38 @@ namespace Mielte.Pages
         {
             InitializeComponent();
         }
+
+        Brush color0 = new SolidColorBrush(Color.FromRgb(0, 0, 0)); // создание чёрного цвета
+        Brush colorOrange = new SolidColorBrush(Color.FromRgb(255, 128, 0)); // создание оранжевого цвета
+
+        private void ButtonBack_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("Pages/CatalogCars.xaml", UriKind.Relative)); // переход на страницу каталога
+        }
+
+        private void ButtonBack_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ButtonBack.Stroke = colorOrange; // обводка блока оранжевого цвета
+        }
+
+        private void ButtonBack_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ButtonBack.Stroke = color0; // обводка блока в чёрного цвета
+        }
+
+        private void ButtonAdd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void ButtonAdd_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ButtonAdd.Stroke = colorOrange; // обводка блока оранжевого цвета
+        }
+
+        private void ButtonAdd_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ButtonAdd.Stroke = color0; // обводка блока в чёрного цвета
+        }
     }
 }

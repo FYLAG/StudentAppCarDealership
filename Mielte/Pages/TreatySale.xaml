@@ -36,7 +36,7 @@
             </Rectangle.RenderTransform>
         </Rectangle>
 
-        <Rectangle Height="35" Margin="0,25,-25,0" Stroke="Black" VerticalAlignment="Top" Fill="White" RenderTransformOrigin="0.5,0.5" Width="175" HorizontalAlignment="Right">
+        <Rectangle x:Name="ButtonBack" Height="35" Margin="0,25,-25,0" Stroke="Black" VerticalAlignment="Top" Fill="White" RenderTransformOrigin="0.5,0.5" Width="175" HorizontalAlignment="Right">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -46,8 +46,8 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="вернуться" Margin="0,25,-20,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,10,0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="165"/>
-        <Rectangle Height="35" Margin="0,25,160,0" Stroke="Black" VerticalAlignment="Top" Fill="White" RenderTransformOrigin="0.5,0.5" Width="200" HorizontalAlignment="Right">
+        <Label Content="вернуться" Margin="0,25,-20,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,10,0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="165" MouseDown="ButtonBack_MouseDown" MouseEnter="ButtonBack_MouseEnter" MouseLeave="ButtonBack_MouseLeave"/>
+        <Rectangle x:Name="ButtonNewTreaty" Height="35" Margin="0,25,160,0" Stroke="Black" VerticalAlignment="Top" Fill="White" RenderTransformOrigin="0.5,0.5" Width="200" HorizontalAlignment="Right">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -57,7 +57,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="оформить новый" Margin="0,25,165,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="190"/>
+        <Label Content="оформить новый" Margin="0,25,165,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="190" MouseDown="ButtonNewTreaty_MouseDown" MouseEnter="ButtonNewTreaty_MouseEnter" MouseLeave="ButtonNewTreaty_MouseLeave"/>
 
         <Grid VerticalAlignment="Top" Height="350" Margin="0,88,0,0">
 
@@ -135,7 +135,7 @@
             </Rectangle>
             <Label Content="менеджер: Гаврилов Александр Юрьевич" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" Padding="15,0,15,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,355,65"/>
             
-            <Rectangle Height="45" Stroke="Black" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="-25,0,410,0" StrokeThickness="2" Fill="#FFEEEEEE">
+            <Rectangle x:Name="ButtonBefore" Height="45" Stroke="Black" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="-25,0,410,0" StrokeThickness="2" Fill="#FFEEEEEE">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -145,8 +145,8 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Label Content="&lt;- предыдущий" Margin="0,0,405,0" VerticalAlignment="Bottom" Height="45" VerticalContentAlignment="Center" Padding="0,0,50,2" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" HorizontalContentAlignment="Right"/>
-            <Rectangle HorizontalAlignment="Stretch" Height="45" Stroke="Black" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="410,0,-25,0" StrokeThickness="2" Fill="#FFEEEEEE">
+            <Label Content="&lt;- предыдущий" Margin="0,0,405,0" VerticalAlignment="Bottom" Height="45" VerticalContentAlignment="Center" Padding="0,0,50,2" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" HorizontalContentAlignment="Right" MouseDown="ButtonBefore_MouseDown" MouseEnter="ButtonBefore_MouseEnter" MouseLeave="ButtonBefore_MouseLeave"/>
+            <Rectangle x:Name="ButtonAfter" HorizontalAlignment="Stretch" Height="45" Stroke="Black" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="410,0,-25,0" StrokeThickness="2" Fill="#FFEEEEEE">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -156,7 +156,7 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Label Content="следующий -&gt;" HorizontalAlignment="Stretch" Margin="405,0,0,0" VerticalAlignment="Bottom" Height="45" VerticalContentAlignment="Center" Padding="50,0,0,2" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold"/>
+            <Label Content="следующий -&gt;" HorizontalAlignment="Stretch" Margin="405,0,0,0" VerticalAlignment="Bottom" Height="45" VerticalContentAlignment="Center" Padding="50,0,0,2" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" MouseDown="ButtonAfter_MouseDown" MouseEnter="ButtonAfter_MouseEnter" MouseLeave="ButtonAfter_MouseLeave"/>
 
         </Grid>
     </Grid>
