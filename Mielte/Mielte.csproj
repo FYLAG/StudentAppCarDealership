@@ -7,12 +7,102 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pictures\Cars\AstonMartin_DBS.png" />
+    <None Remove="Pictures\Cars\Audi-RS5_sportback.png" />
+    <None Remove="Pictures\Cars\Audi_A4.png" />
+    <None Remove="Pictures\Cars\Audi_A5_sportback.png" />
+    <None Remove="Pictures\Cars\Audi_A7.png" />
+    <None Remove="Pictures\Cars\BMW_3.png" />
+    <None Remove="Pictures\Cars\BMW_4.png" />
+    <None Remove="Pictures\Cars\BMW_8.png" />
+    <None Remove="Pictures\Cars\BMW_M2.png" />
+    <None Remove="Pictures\Cars\BMW_M4.png" />
+    <None Remove="Pictures\Cars\BMW_M8.png" />
+    <None Remove="Pictures\Cars\Chevrolet_Camaro.png" />
+    <None Remove="Pictures\Cars\Chevrolet_Corvette.png" />
+    <None Remove="Pictures\Cars\Jaguar_E-Pace.png" />
+    <None Remove="Pictures\Cars\Mercedes_AMG_GT.png" />
+    <None Remove="Pictures\Cars\Mercedes_C.png" />
+    <None Remove="Pictures\Cars\Mercedes_EQC.png" />
+    <None Remove="Pictures\Cars\Mercedes_GLC_coupe_AMG.png" />
+    <None Remove="Pictures\Cars\Porche_Boxter.png" />
+    <None Remove="Pictures\Cars\Tesla_Model_S.png" />
+    <None Remove="Pictures\Cars\Tesla_Model_X.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="6.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Pictures\Cars\AstonMartin_DBS.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Audi-RS5_sportback.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Audi_A4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Audi_A5_sportback.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Audi_A7.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\BMW_3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\BMW_4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\BMW_8.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\BMW_M2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\BMW_M4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\BMW_M8.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Chevrolet_Camaro.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Chevrolet_Corvette.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Jaguar_E-Pace.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Mercedes_AMG_GT.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Mercedes_C.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Mercedes_EQC.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Mercedes_GLC_coupe_AMG.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Porche_Boxter.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Tesla_Model_S.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Cars\Tesla_Model_X.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

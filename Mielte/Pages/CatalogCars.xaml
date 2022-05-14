@@ -70,7 +70,7 @@
                 <StackPanel>
                     <Grid VerticalAlignment="Top" Height="170" Margin="0,0,0,10" Background="#FFEEEEEE">
                         <Label x:Name="TextID" Content="id: 999" HorizontalAlignment="Left" Margin="5,5,0,0" VerticalAlignment="Top" Padding="5" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" Background="#FFEEEEEE" VerticalContentAlignment="Top"/>
-                        <Image HorizontalAlignment="Left" Margin="5,5,0,5" Width="250" Source="/Mielte;component/Pictures/Cars/BMW_3.png"/>
+                        <Image HorizontalAlignment="Left" Margin="5,5,0,5" Width="250" Source="/Pictures/Cars/BMW_M4.png"/>
                         <Label Content="год производства" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
                         <Label Content="дизель / 3.0 / 620 л.с." HorizontalAlignment="Left" Margin="280,10,0,0" VerticalAlignment="Top" Height="30" FontSize="14" FontFamily="Arial" VerticalContentAlignment="Center" FontWeight="Bold"/>

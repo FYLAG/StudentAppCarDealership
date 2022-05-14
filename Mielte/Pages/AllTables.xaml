@@ -33,7 +33,7 @@
             </Rectangle.RenderTransform>
         </Rectangle>
         <Label Content="сохранить изменения" Margin="0,10,165,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,0,0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="225" MouseDown="ButtonSave_MouseDown" MouseEnter="ButtonSave_MouseEnter" MouseLeave="ButtonSave_MouseLeave"/>
-        <Rectangle Height="35" Margin="350,10,400,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Rectangle Height="35" Margin="325,10,400,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF0F0F0"/>

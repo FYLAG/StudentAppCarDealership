@@ -70,5 +70,35 @@ namespace Mielte.Pages
         {
             ButtonBuy.Stroke = color0; // обводка блока в чёрного цвета
         }
+
+        private void ButtonBefore_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void ButtonBefore_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ButtonBefore.Stroke = colorOrange; // обводка блока оранжевого цвета
+        }
+
+        private void ButtonBefore_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ButtonBefore.Stroke = color0; // обводка блока в чёрного цвета
+        }
+
+        private void ButtonAfter_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+        private void ButtonAfter_MouseEnter(object sender, MouseEventArgs e)
+        {
+            ButtonAfter.Stroke = colorOrange; // обводка блока оранжевого цвета
+        }
+
+        private void ButtonAfter_MouseLeave(object sender, MouseEventArgs e)
+        {
+            ButtonAfter.Stroke = color0; // обводка блока в чёрного цвета
+        }
     }
 }

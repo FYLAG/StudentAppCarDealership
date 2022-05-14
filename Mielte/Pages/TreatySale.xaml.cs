@@ -28,7 +28,7 @@ namespace Mielte.Pages
 
         private void ButtonBack_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("Pages/MainMenu.xaml", UriKind.Relative)); // переход на страницу авторизации
+            this.NavigationService.Navigate(new Uri("Pages/InfoBuyer.xaml", UriKind.Relative)); // переход на страницу авторизации
         }
 
         private void ButtonBack_MouseEnter(object sender, MouseEventArgs e)
@@ -43,7 +43,7 @@ namespace Mielte.Pages
 
         private void ButtonNewTreaty_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            this.NavigationService.Navigate(new Uri("Pages/NewTreatySale.xaml", UriKind.Relative)); // переход на страницу продажи
         }
 
         private void ButtonNewTreaty_MouseEnter(object sender, MouseEventArgs e)

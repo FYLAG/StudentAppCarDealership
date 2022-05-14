@@ -71,8 +71,8 @@
         <Label Content="приобрести" Margin="0,25,325,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="140" MouseDown="ButtonBuy_MouseDown" MouseEnter="ButtonBuy_MouseEnter" MouseLeave="ButtonBuy_MouseLeave"/>
 
         <Grid VerticalAlignment="Center" Height="350" Margin="0,75,0,0">
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Center">
-                <Rectangle HorizontalAlignment="Left" Margin="-15,0,0,0" Width="75" Fill="#FFEEEEEE" Height="50" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="3">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="ButtonBefore_MouseDown" MouseEnter="ButtonBefore_MouseEnter" MouseLeave="ButtonBefore_MouseLeave">
+                <Rectangle x:Name="ButtonBefore" HorizontalAlignment="Left" Margin="-15,0,0,0" Width="75" Fill="#FFEEEEEE" Height="50" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="3">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -108,13 +108,13 @@
                 </Rectangle>
                 <Rectangle Fill="#FFEEEEEE" Margin="25,10" StrokeThickness="3" RenderTransformOrigin="0.5,0.5"/>
                 <Label Content="Model car" Margin="25,10,25,0" VerticalAlignment="Top" Height="35" Padding="10,0,0,0" VerticalContentAlignment="Center" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="14"/>
-                <Image Margin="75,55,75,65" Source="/Mielte;component/Pictures/Cars/BMW_3.png" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+                <Image Margin="75,55,75,65" Source="/Pictures/Cars/BMW_M4.png" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
                 <Rectangle Fill="#FFEEEEEE" Height="35" Margin="175,0,175,20" StrokeThickness="3" VerticalAlignment="Bottom" Stroke="Black"/>
                 <Label x:Name="ButtonMore" Content="подробнее" Margin="175,0,175,20" VerticalAlignment="Bottom" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontSize="20" FontFamily="Arial" FontWeight="Bold" Cursor="Hand"/>
             </Grid>
 
-            <Grid HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Rectangle HorizontalAlignment="Left" Margin="0,0,-15,0" Width="75" Fill="#FFEEEEEE" Height="50" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="3">
+            <Grid HorizontalAlignment="Right" VerticalAlignment="Center" MouseDown="ButtonAfter_MouseDown" MouseEnter="ButtonAfter_MouseEnter" MouseLeave="ButtonAfter_MouseLeave">
+                <Rectangle x:Name="ButtonAfter" HorizontalAlignment="Left" Margin="0,0,-15,0" Width="75" Fill="#FFEEEEEE" Height="50" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="3">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
