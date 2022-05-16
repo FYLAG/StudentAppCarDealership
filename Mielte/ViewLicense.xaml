@@ -1,0 +1,17 @@
+﻿<Window x:Class="Mielte.ViewLicense"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Mielte"
+        mc:Ignorable="d"
+        Title="ViewLicense" Height="350" Width="400">
+
+    <Window.Resources>
+        <BitmapImage x:Key="ImageLicenses" UriSource="/Pictures/Licenses/prava_Brus_Villis.jpg"/>
+    </Window.Resources>
+
+    <Grid>
+        <Image HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Source="{DynamicResource ImageLicenses}" Stretch="Uniform" StretchDirection="Both"/>
+    </Grid>
+</Window>

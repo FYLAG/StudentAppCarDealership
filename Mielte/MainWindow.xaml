@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mielte"
         mc:Ignorable="d"
-        Title="Mielte" Height="500" Width="800" MaxWidth="1420" MaxHeight="920" MinWidth="800" MinHeight="450">
+        Title="Mielte" Height="500" MaxWidth="1420" MaxHeight="920" MinWidth="800" MinHeight="450" Width="800">
     <Frame x:Name="MainFrame" Source="Pages/Authorization.xaml" NavigationUIVisibility="Hidden" IsTabStop="False" Focusable="False" />
 </Window>

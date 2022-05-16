@@ -25,6 +25,7 @@ namespace Mielte.Pages
 
         Brush color0 = new SolidColorBrush(Color.FromRgb(0, 0, 0)); // создание чёрного цвета
         Brush color238 = new SolidColorBrush(Color.FromRgb(238, 238, 238)); // создание светлого цвета
+        Brush color255 = new SolidColorBrush(Color.FromRgb(255, 255, 255)); // создание светлого цвета
 
         private void TextBoxLogin_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -60,7 +61,7 @@ namespace Mielte.Pages
 
         private void BlockLinkReg_MouseLeave(object sender, MouseEventArgs e)
         {
-            BlockLinkReg.Fill = color238; // закрашивание блока в светлый цвет
+            BlockLinkReg.Fill = color255; // закрашивание блока в светлый цвет
         }
     }
 }

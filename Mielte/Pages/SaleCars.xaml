@@ -8,6 +8,10 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SaleCars">
 
+    <Page.Resources>
+        <BitmapImage x:Key="Image" UriSource="/Pictures/Cars/BMW_M4.png"/>
+    </Page.Resources>
+
     <Grid Background="White">
         <Label Content="M" HorizontalAlignment="Left" Margin="13,9,0,0" VerticalAlignment="Top" Foreground="#FFFF8000" FontFamily="Magneto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48" Padding="0"/>
         <Label Content="ielte" HorizontalAlignment="Left" Margin="67,20,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Magneto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Padding="2,0,0,0"/>
@@ -46,7 +50,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="вернуться" Margin="0,25,-20,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,10,0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="165" MouseDown="ButtonBack_MouseDown" MouseEnter="ButtonBack_MouseEnter" MouseLeave="ButtonBack_MouseLeave"/>
+        <Label Content="вернуться" Margin="0,25,-20,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,10,0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="165" MouseDown="ButtonBack_MouseDown" MouseEnter="ButtonBack_MouseEnter" MouseLeave="ButtonBack_MouseLeave" Cursor="Hand"/>
         <Rectangle x:Name="ButtonCatalog" Height="35" Margin="0,25,160,0" Stroke="Black" VerticalAlignment="Top" Fill="White" RenderTransformOrigin="0.5,0.5" Width="150" HorizontalAlignment="Right">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -57,7 +61,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="каталог" Margin="0,25,165,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="140" MouseDown="ButtonCatalog_MouseDown" MouseEnter="ButtonCatalog_MouseEnter" MouseLeave="ButtonCatalog_MouseLeave"/>
+        <Label Content="каталог" Margin="0,25,165,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="140" MouseDown="ButtonCatalog_MouseDown" MouseEnter="ButtonCatalog_MouseEnter" MouseLeave="ButtonCatalog_MouseLeave" Cursor="Hand"/>
         <Rectangle x:Name="ButtonBuy" Height="35" Margin="0,25,320,0" Stroke="Black" VerticalAlignment="Top" Fill="White" RenderTransformOrigin="0.5,0.5" Width="150" HorizontalAlignment="Right">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -68,10 +72,10 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="приобрести" Margin="0,25,325,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="140" MouseDown="ButtonBuy_MouseDown" MouseEnter="ButtonBuy_MouseEnter" MouseLeave="ButtonBuy_MouseLeave"/>
+        <Label Content="приобрести" Margin="0,25,325,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="140" MouseDown="ButtonBuy_MouseDown" MouseEnter="ButtonBuy_MouseEnter" MouseLeave="ButtonBuy_MouseLeave" Cursor="Hand"/>
 
         <Grid VerticalAlignment="Center" Height="350" Margin="0,75,0,0">
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="ButtonBefore_MouseDown" MouseEnter="ButtonBefore_MouseEnter" MouseLeave="ButtonBefore_MouseLeave">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="ButtonBefore_MouseDown" MouseEnter="ButtonBefore_MouseEnter" MouseLeave="ButtonBefore_MouseLeave" Cursor="Hand">
                 <Rectangle x:Name="ButtonBefore" HorizontalAlignment="Left" Margin="-15,0,0,0" Width="75" Fill="#FFEEEEEE" Height="50" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="3">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
@@ -107,13 +111,13 @@
                     </Rectangle.RenderTransform>
                 </Rectangle>
                 <Rectangle Fill="#FFEEEEEE" Margin="25,10" StrokeThickness="3" RenderTransformOrigin="0.5,0.5"/>
-                <Label Content="Model car" Margin="25,10,25,0" VerticalAlignment="Top" Height="35" Padding="10,0,0,0" VerticalContentAlignment="Center" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="14"/>
-                <Image Margin="75,55,75,65" Source="/Pictures/Cars/BMW_M4.png" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-                <Rectangle Fill="#FFEEEEEE" Height="35" Margin="175,0,175,20" StrokeThickness="3" VerticalAlignment="Bottom" Stroke="Black"/>
-                <Label x:Name="ButtonMore" Content="подробнее" Margin="175,0,175,20" VerticalAlignment="Bottom" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontSize="20" FontFamily="Arial" FontWeight="Bold" Cursor="Hand"/>
+                <Label Content="{DynamicResource Title}" Margin="25,10,25,0" VerticalAlignment="Top" Height="35" Padding="10,0,0,0" VerticalContentAlignment="Center" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="14"/>
+                <Image Margin="75,55,75,65" Source="{DynamicResource Image}" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
+                <Label Content="{DynamicResource Price}" Margin="150,0,150,20" VerticalAlignment="Bottom" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="10,0,10,0" FontSize="20" FontFamily="Arial" FontWeight="Bold"/>
+                <Rectangle Height="35" Margin="150,0,150,20" StrokeThickness="3" VerticalAlignment="Bottom" Stroke="Black"/>
             </Grid>
 
-            <Grid HorizontalAlignment="Right" VerticalAlignment="Center" MouseDown="ButtonAfter_MouseDown" MouseEnter="ButtonAfter_MouseEnter" MouseLeave="ButtonAfter_MouseLeave">
+            <Grid HorizontalAlignment="Right" VerticalAlignment="Center" MouseDown="ButtonAfter_MouseDown" MouseEnter="ButtonAfter_MouseEnter" MouseLeave="ButtonAfter_MouseLeave" Cursor="Hand">
                 <Rectangle x:Name="ButtonAfter" HorizontalAlignment="Left" Margin="0,0,-15,0" Width="75" Fill="#FFEEEEEE" Height="50" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Stroke="Black" StrokeThickness="3">
                     <Rectangle.RenderTransform>
                         <TransformGroup>

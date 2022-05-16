@@ -8,6 +8,20 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="InfoSupplier">
 
+    <Page.Resources>
+        <DataTemplate x:Key="BlockInfoSupplier">
+            <StackPanel VerticalAlignment="Top" Margin="0,5,0,5">
+                <Grid Height="80" Background="#FFEEEEEE">
+                    <Label Content="{Binding Path=Id}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Padding="5,0,0,0" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" Height="25" Width="75" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="14"/>
+                    <Label Content="{Binding Path=Title}" HorizontalAlignment="Stretch" Margin="100,10,250,0" VerticalAlignment="Top" Padding="5,0,0,0" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="14"/>
+                    <Label Content="{Binding Path=Phone}" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Padding="0,0,5,0" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" Height="25" Width="225" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="14"/>
+                    <Label Content="{Binding Path=Address}" HorizontalAlignment="Stretch" Margin="210,45,10,0" VerticalAlignment="Top" Padding="5,0,5,0" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="14"/>
+                    <Label Content="{Binding Path=Inn}" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Padding="5,0,0,0" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" Height="25" Width="175" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="14"/>
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
+
     <Grid Background="White">
         <Label Content="M" HorizontalAlignment="Left" Margin="13,9,0,0" VerticalAlignment="Top" Foreground="#FFFF8000" FontFamily="Magneto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48" Padding="0"/>
         <Label Content="ielte" HorizontalAlignment="Left" Margin="67,20,0,0" VerticalAlignment="Top" Foreground="Black" FontFamily="Magneto" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="36" Padding="2,0,0,0"/>
@@ -61,15 +75,8 @@
 
         <Grid Margin="0,85,0,0">
             <ScrollViewer Padding="10,0,10,0">
-                <StackPanel>
-                    <Grid VerticalAlignment="Top" Height="80" Background="#FFEEEEEE">
-                        <Label Content="id: 999" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Padding="5,0,0,0" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" Height="25" Width="75" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="14"/>
-                        <Label Content="ЛакшериКар" HorizontalAlignment="Stretch" Margin="100,10,250,0" VerticalAlignment="Top" Padding="5,0,0,0" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="14"/>
-                        <Label Content="Телефон: 8 (800) 555-35-35" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Padding="0,0,5,0" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" Height="25" Width="225" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontSize="14"/>
-                        <Label Content="Адрес: г.Санкт-Петербург, Красносельский р-н, ул.Маршала Казакова, д.99" HorizontalAlignment="Stretch" Margin="210,45,10,0" VerticalAlignment="Top" Padding="5,0,5,0" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="14"/>
-                        <Label Content="ИНН: 1234567890" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Padding="5,0,0,0" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" Height="25" Width="175" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" FontSize="14"/>
-                    </Grid>
-                </StackPanel>
+                <ListBox x:Name="StupplierListBox" ItemTemplate="{StaticResource BlockInfoSupplier}" BorderThickness="0,0,0,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Focusable="False" IsHitTestVisible="False" />
+                <!-- SelectionChanged="personSupplierList_SelectionChanged" -->
             </ScrollViewer>
         </Grid>
     </Grid>

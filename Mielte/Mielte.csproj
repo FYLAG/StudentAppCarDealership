@@ -28,6 +28,12 @@
     <None Remove="Pictures\Cars\Porche_Boxter.png" />
     <None Remove="Pictures\Cars\Tesla_Model_S.png" />
     <None Remove="Pictures\Cars\Tesla_Model_X.png" />
+    <None Remove="Pictures\Licenses\prava_Belaev.jpg" />
+    <None Remove="Pictures\Licenses\prava_Brus_Villis.jpg" />
+    <None Remove="Pictures\Licenses\prava_Cheraiter.jpg" />
+    <None Remove="Pictures\Licenses\prava_Roker.jpg" />
+    <None Remove="Pictures\Licenses\prava_Severov.jpg" />
+    <None Remove="Pictures\Licenses\prava_Shoigu.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -101,6 +107,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Pictures\Cars\Tesla_Model_X.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Licenses\prava_Roker.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Licenses\prava_Belaev.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Licenses\prava_Brus_Villis.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Licenses\prava_Cheraiter.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Licenses\prava_Severov.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Licenses\prava_Shoigu.jpg">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
