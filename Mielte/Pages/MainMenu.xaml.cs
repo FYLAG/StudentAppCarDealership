@@ -18,9 +18,35 @@ namespace Mielte.Pages
     /// </summary>
     public partial class MainMenu : Page
     {
+        public string GetLogin()
+        {
+            return App.Current.Properties["LoginOfProperty"].ToString();
+        }
+
+        public string GetRole()
+        {
+            return App.Current.Properties["RoleOfProperty"].ToString();
+        }
+
         public MainMenu()
         {
             InitializeComponent();
+
+            LabelLoginUser.Content = GetLogin();
+
+            if (GetRole() != "Administrator")
+            {
+                ButtonAllTables.Visibility = Visibility.Collapsed;
+                LabelAllTables.Visibility = Visibility.Collapsed;
+            }
+
+            if (GetRole() != "Administrator" && GetRole() != "Manager")
+            {
+                LabelStaffs.IsEnabled = false;
+                labelBuyers.IsEnabled = false;
+                labelSuppliers.IsEnabled = false;
+            }
+
         }
 
         Brush color0 = new SolidColorBrush(Color.FromRgb(0, 0, 0)); // создание чёрного цвета
@@ -30,7 +56,7 @@ namespace Mielte.Pages
         {
             this.NavigationService.Navigate(new Uri("Pages/Authorization.xaml", UriKind.Relative)); // переход на страницу авторизации
         }
-                
+
         private void ButtonOtherUser_MouseEnter(object sender, MouseEventArgs e)
         {
             ButtonOtherUser.Stroke = colorOrange; // обводка блока оранжевого цвета

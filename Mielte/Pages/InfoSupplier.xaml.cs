@@ -20,17 +20,27 @@ namespace Mielte.Pages
     /// Логика взаимодействия для InfoSupplier.xaml
     /// </summary>
     
-    public class PersonSupplier
-    {
-        public string Id { get; set; }
-        public string Title { get; set; }
-        public string Phone { get; set; }
-        public string Address { get; set; }
-        public string Inn { get; set; }
-    }
-    
     public partial class InfoSupplier : Page
     {
+
+        public string GetLogin()
+        {
+            return App.Current.Properties["LoginOfProperty"].ToString();
+        }
+
+        public string GetRole()
+        {
+            return App.Current.Properties["RoleOfProperty"].ToString();
+        }
+
+        public class PersonSupplier
+        {
+            public string Id { get; set; }
+            public string Title { get; set; }
+            public string Phone { get; set; }
+            public string Address { get; set; }
+            public string Inn { get; set; }
+        }
 
         public ObservableCollection<PersonSupplier> Suppliers { get; set; }
 
@@ -61,6 +71,12 @@ namespace Mielte.Pages
         public InfoSupplier()
         {
             InitializeComponent();
+
+            if (GetRole() != "Administrator" && GetRole() != "Manager")
+            {
+                ButtonTreatyBuy.Visibility = Visibility.Collapsed;
+                LabelTreatyBuy.Visibility = Visibility.Collapsed;
+            }
 
             FillingSupplierList();
         }

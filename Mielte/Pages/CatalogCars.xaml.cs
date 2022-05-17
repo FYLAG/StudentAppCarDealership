@@ -23,6 +23,16 @@ namespace Mielte.Pages
     public partial class CatalogCars : Page
     {
 
+        public string GetLogin()
+        {
+            return App.Current.Properties["LoginOfProperty"].ToString();
+        }
+
+        public string GetRole()
+        {
+            return App.Current.Properties["RoleOfProperty"].ToString();
+        }
+
         public class CarCharacteristics
         {
             public string Id { get; set; }
@@ -83,7 +93,7 @@ namespace Mielte.Pages
                     {
                         Id = $"ID: {x.IdCatalog} \t {x.CarNavigation?.ModelNavigation?.ManufacturerNavigation?.Title} {x.CarNavigation?.ModelNavigation?.Model} {x.CarNavigation?.Generation}",
                         Image = $@"{x.CarNavigation?.Image}",
-                        Date = $"{x.DateManufacture.ToShortDateString()} \t {x.CarNavigation.BodyNavigation?.Title}",
+                        Date = $"{x.DateManufacture.ToShortDateString()} \t {x.CarNavigation?.BodyNavigation?.Title}",
                         CharacteristicsEngine = $"{x.EngineTypeNavigation?.Title} / {x.EngineVolume} / {x.EnginePower} л.с.",
                         CharacteristicsChassis = $"{x.CarDriveNavigation?.Title} / {x.CarBoxNavigation?.Title}",
                         Colors = $"{x.BodyColorNavigation?.Title} / {x.InteriorColorNavigation?.Title}",
@@ -114,6 +124,12 @@ namespace Mielte.Pages
         public CatalogCars()
         {
             InitializeComponent();
+
+            if (GetRole() != "Administrator")
+            {
+                ButtonAdd.Visibility = Visibility.Collapsed;
+                LabelAdd.Visibility = Visibility.Collapsed;
+            }
 
             var DataBase = gavrilov_kpContext.GetContext();
 

@@ -28,6 +28,7 @@
     <None Remove="Pictures\Cars\Porche_Boxter.png" />
     <None Remove="Pictures\Cars\Tesla_Model_S.png" />
     <None Remove="Pictures\Cars\Tesla_Model_X.png" />
+    <None Remove="Pictures\icon.ico" />
     <None Remove="Pictures\Licenses\prava_Belaev.jpg" />
     <None Remove="Pictures\Licenses\prava_Brus_Villis.jpg" />
     <None Remove="Pictures\Licenses\prava_Cheraiter.jpg" />
@@ -107,6 +108,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Pictures\Cars\Tesla_Model_X.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\icon.ico">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Pictures\Licenses\prava_Roker.jpg">

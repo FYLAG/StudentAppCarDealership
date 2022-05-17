@@ -47,19 +47,23 @@ namespace Mielte.Models
         public virtual DbSet<Employees> Employees { get; set; }
         public virtual DbSet<Historyemployees> Historyemployees { get; set; }
         public virtual DbSet<Interiormaterials> Interiormaterials { get; set; }
+        public virtual DbSet<Oldbuyer> Oldbuyer { get; set; }
+        public virtual DbSet<Popularcar> Popularcar { get; set; }
         public virtual DbSet<Popularcolor> Popularcolor { get; set; }
         public virtual DbSet<Positions> Positions { get; set; }
+        public virtual DbSet<Salesmanagers> Salesmanagers { get; set; }
         public virtual DbSet<Suppliedbrands> Suppliedbrands { get; set; }
         public virtual DbSet<Suppliers> Suppliers { get; set; }
         public virtual DbSet<Treatiesbuycars> Treatiesbuycars { get; set; }
         public virtual DbSet<Treatiessalecars> Treatiessalecars { get; set; }
+        public virtual DbSet<Userprogram> Userprogram { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=localhost;database=gavrilov_kp;user=root;password=QxNgMI35P1");
+                optionsBuilder.UseMySql("server=localhost;database=gavrilov_kp;user=root;password=12345");
             }
         }
 
@@ -590,14 +594,10 @@ namespace Mielte.Models
 
             modelBuilder.Entity<Carsforsale>(entity =>
             {
-                entity.HasKey(e => new { e.IdCar, e.IdCarDealerships })
+                entity.HasKey(e => e.IdCar)
                     .HasName("PRIMARY");
 
                 entity.ToTable("carsforsale");
-
-                entity.HasIndex(e => e.IdCar)
-                    .HasName("idCar_UNIQUE")
-                    .IsUnique();
 
                 entity.HasIndex(e => e.IdCarDealerships)
                     .HasName("carsForSale_Frk2_idx");
@@ -856,6 +856,47 @@ namespace Mielte.Models
                     .HasCollation("utf8mb4_0900_ai_ci");
             });
 
+            modelBuilder.Entity<Oldbuyer>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("oldbuyer");
+
+                entity.Property(e => e.Car)
+                    .HasColumnType("varchar(272)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.DateSale).HasColumnType("date");
+
+                entity.Property(e => e.Fio)
+                    .HasColumnName("FIO")
+                    .HasColumnType("varchar(272)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Phone)
+                    .HasColumnType("varchar(25)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Price).HasColumnType("decimal(12,2)");
+            });
+
+            modelBuilder.Entity<Popularcar>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("popularcar");
+
+                entity.Property(e => e.Amount).HasColumnType("decimal(42,0)");
+
+                entity.Property(e => e.CarTitle)
+                    .HasColumnType("varchar(272)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+            });
+
             modelBuilder.Entity<Popularcolor>(entity =>
             {
                 entity.HasNoKey();
@@ -900,6 +941,23 @@ namespace Mielte.Models
                     .HasColumnType("varchar(90)")
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
+            });
+
+            modelBuilder.Entity<Salesmanagers>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("salesmanagers");
+
+                entity.Property(e => e.Fio)
+                    .HasColumnName("FIO")
+                    .HasColumnType("varchar(272)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.IdEmployees)
+                    .HasColumnName("idEmployees")
+                    .HasDefaultValueSql("'0'");
             });
 
             modelBuilder.Entity<Suppliedbrands>(entity =>
@@ -1065,6 +1123,48 @@ namespace Mielte.Models
                     .HasForeignKey(d => d.Manager)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("treatiesSaleCars_Frk3");
+            });
+
+            modelBuilder.Entity<Userprogram>(entity =>
+            {
+                entity.HasKey(e => e.IdUser)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("userprogram");
+
+                entity.HasIndex(e => e.Email)
+                    .HasName("Email_UNIQUE")
+                    .IsUnique();
+
+                entity.HasIndex(e => e.Login)
+                    .HasName("Login_UNIQUE")
+                    .IsUnique();
+
+                entity.Property(e => e.IdUser).HasColumnName("idUser");
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasColumnType("varchar(90)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Login)
+                    .IsRequired()
+                    .HasColumnType("varchar(90)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Password)
+                    .IsRequired()
+                    .HasColumnType("varchar(90)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
+                entity.Property(e => e.Role)
+                    .HasColumnType("varchar(90)")
+                    .HasDefaultValueSql("'User'")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
             });
 
             OnModelCreatingPartial(modelBuilder);

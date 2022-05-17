@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mielte"
         mc:Ignorable="d"
-        Title="ViewLicense" Height="350" Width="400">
+        Title="ViewLicense" Icon="/Pictures/icon.ico" Height="350" Width="400" MaxWidth="800" MaxHeight="700">
 
     <Window.Resources>
         <BitmapImage x:Key="ImageLicenses" UriSource="/Pictures/Licenses/prava_Brus_Villis.jpg"/>

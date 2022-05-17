@@ -71,7 +71,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="договоры заказов" Margin="0,25,165,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="215" Cursor="Hand" MouseDown="ButtonTreatyBuy_MouseDown" MouseEnter="ButtonTreatyBuy_MouseEnter" MouseLeave="ButtonTreatyBuy_MouseLeave"/>
+        <Label x:Name="LabelTreatyBuy" Content="договоры заказов" Margin="0,25,165,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="215" Cursor="Hand" MouseDown="ButtonTreatyBuy_MouseDown" MouseEnter="ButtonTreatyBuy_MouseEnter" MouseLeave="ButtonTreatyBuy_MouseLeave"/>
 
         <Grid Margin="0,85,0,0">
             <ScrollViewer Padding="10,0,10,0">

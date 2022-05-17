@@ -1,5 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using Mielte.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,6 +24,16 @@ namespace Mielte.Pages
     public partial class SaleCars : Page
     {
 
+        public string GetLogin()
+        {
+            return App.Current.Properties["LoginOfProperty"].ToString();
+        }
+
+        public string GetRole()
+        {
+            return App.Current.Properties["RoleOfProperty"].ToString();
+        }
+
         public class InfoCarSale
         {
             public string Title { get; set; }
@@ -26,27 +41,60 @@ namespace Mielte.Pages
             public string Price { get; set; }
         }
 
-        public InfoCarSale obj { get; set; }
+        public ObservableCollection<InfoCarSale> CarSaleList { get; set; }
 
-        public void updateDynamicResources()
+        private void FillingSaleCarsList()
         {
-            this.Resources["Title"] = obj.Title;
-            this.Resources["Image"] = new BitmapImage(new Uri(obj.Image, UriKind.Relative));
-            this.Resources["Price"] = obj.Price;
+            CarSaleList = new ObservableCollection<InfoCarSale> { };
+
+            using (gavrilov_kpContext db = new gavrilov_kpContext())
+            {
+                // получаем объекты из бд и выводим на консоль
+                var entries = db.Carsforsale
+                    .Include(x => x.IdCarNavigation.CarNavigation.ModelNavigation.ManufacturerNavigation)
+                    .Include(x => x.IdCarNavigation.CarNavigation)
+                    .OrderBy(x => x.IdCar).ToList();
+                foreach (Carsforsale x in entries)
+                {
+                    CarSaleList.Add(new InfoCarSale
+                    {
+                        Title = $"{x.IdCarNavigation?.CarNavigation?.ModelNavigation?.ManufacturerNavigation?.Title} " +
+                                $"{x.IdCarNavigation?.CarNavigation?.ModelNavigation.Model} " +
+                                $"{x.IdCarNavigation?.CarNavigation?.Generation}",
+                        Image = $@"{x.IdCarNavigation?.CarNavigation?.Image}",
+                        Price = $"{x.Price.ToString("N0", new CultureInfo("en-us"))}.00 ₽"
+                    });
+                }
+            }
         }
+
+        private void RefreshResources(string title, string image, string price)
+        {
+            this.Resources["Title"] = title;
+            this.Resources["Image"] = new BitmapImage(new Uri(image, UriKind.Relative));
+            this.Resources["Price"] = price;
+        }
+
+        private void RefreshResourcesQuick()
+        {
+            RefreshResources(CarSaleList[i].Title, CarSaleList[i].Image, CarSaleList[i].Price);
+        }
+
+        int i = 0; // индекс первоначально увиденного автомобиля
 
         public SaleCars()
         {
             InitializeComponent();
 
-            obj = new InfoCarSale();
+            if (GetRole() != "Administrator" && GetRole() != "Manager")
+            {
+                ButtonBuy.Visibility = Visibility.Collapsed;
+                LabelBuy.Visibility = Visibility.Collapsed;
+            }
 
-            obj.Title = "BMW M4 VII(G32) рестайлинг";
-            obj.Image = @"\Pictures\Cars\BMW_M4.png";
-            obj.Price = "10,000,000" + " ₽";
+            FillingSaleCarsList();
 
-            updateDynamicResources();
-
+            RefreshResourcesQuick();
         }
 
         Brush color0 = new SolidColorBrush(Color.FromRgb(0, 0, 0)); // создание чёрного цвета
@@ -99,11 +147,16 @@ namespace Mielte.Pages
 
         private void ButtonBefore_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            obj.Title = "BMW M8 VII(G32) рестайлинг";
-            obj.Image = @"\Pictures\Cars\BMW_M8.png";
-            obj.Price = "24,000,000" + " ₽";
-
-            updateDynamicResources();
+            if (i > 0)
+            {
+                i--;
+                RefreshResourcesQuick();
+            }
+            else
+            {
+                i = CarSaleList.Count - 1;
+                RefreshResourcesQuick();
+            }
         }
 
         private void ButtonBefore_MouseEnter(object sender, MouseEventArgs e)
@@ -118,11 +171,16 @@ namespace Mielte.Pages
 
         private void ButtonAfter_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            obj.Title = "BMW M4 VII(G32) рестайлинг";
-            obj.Image = @"\Pictures\Cars\BMW_M4.png";
-            obj.Price = "10,000,000" + " ₽";
-
-            updateDynamicResources();
+            if (i < CarSaleList.Count - 1)
+            {
+                i++;
+                RefreshResourcesQuick();
+            }
+            else
+            {
+                i = 0;
+                RefreshResourcesQuick();
+            }
         }
 
         private void ButtonAfter_MouseEnter(object sender, MouseEventArgs e)

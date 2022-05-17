@@ -22,7 +22,13 @@
                     <Label Content="{Binding Colors}" HorizontalAlignment="Left" Margin="280,0,0,40" VerticalAlignment="Bottom" VerticalContentAlignment="Center" FontSize="14" FontFamily="Arial" Padding="5" FontWeight="Bold" Height="30"/>
                     <Label Content="{Binding Material}" HorizontalAlignment="Left" Margin="260,0,0,10" VerticalAlignment="Bottom" VerticalContentAlignment="Center" FontSize="14" FontFamily="Arial" Padding="5" FontWeight="Bold" Height="30"/>
 
-                    <ListBox Margin="525,10,10,10" ItemsSource="{Binding SourceOptions}" FontSize="12" FontFamily="Arial" FontStyle="Italic" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+                    <ListBox Margin="525,10,10,10" ItemsSource="{Binding SourceOptions}" FontSize="12" FontFamily="Arial" FontStyle="Italic" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="Control">
+                                <Setter Property="Focusable" Value="False" />
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
                 </Grid>
             </StackPanel>
         </DataTemplate>
@@ -77,7 +83,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="добавить" Margin="0,25,165,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="145" MouseDown="ButtonAdd_MouseDown" MouseEnter="ButtonAdd_MouseEnter" MouseLeave="ButtonAdd_MouseLeave" Cursor="Hand"/>
+        <Label x:Name="LabelAdd" Content="добавить" Margin="0,25,165,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="145" MouseDown="ButtonAdd_MouseDown" MouseEnter="ButtonAdd_MouseEnter" MouseLeave="ButtonAdd_MouseLeave" Cursor="Hand"/>
 
         <Grid Margin="0,80,0,0" ScrollViewer.CanContentScroll="True" MinHeight="370">
 

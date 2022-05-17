@@ -48,8 +48,9 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <TextBlock Margin="175,0,0,0" TextWrapping="Wrap" Text="Введите логин" VerticalAlignment="Top" Height="45" FontSize="16" Padding="15,13,0,0" FontFamily="Arial"/>
-            <TextBox x:Name="TextBoxLogin" Height="45" Margin="175,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" BorderBrush="{x:Null}" SelectionBrush="#FFFF8000" Background="{x:Null}" VerticalContentAlignment="Center" FontSize="16" FontFamily="Arial" FontStyle="Italic" TextDecorations="{x:Null}" CaretBrush="#FFFF8000" BorderThickness="0" TextChanged="TextBoxLogin_TextChanged" Padding="5,0,0,0"/>
+            <TextBlock x:Name="TextBlockLogin_Authorization" Margin="175,0,0,0" TextWrapping="Wrap" Text="Введите логин" VerticalAlignment="Top" Height="45" FontSize="16" Padding="15,13,0,0" FontFamily="Arial"/>
+            <TextBox x:Name="TextBoxLogin_Authorization" Height="45" Margin="175,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" BorderBrush="{x:Null}" SelectionBrush="#FFFF8000" Background="{x:Null}" VerticalContentAlignment="Center" FontSize="16" FontFamily="Arial" FontStyle="Italic" TextDecorations="{x:Null}" CaretBrush="#FFFF8000" BorderThickness="0" Padding="5,0,0,0" GotFocus="TextBoxLogin_Authorization_GotFocus" LostFocus="TextBoxLogin_Authorization_LostFocus"/>
+            
             <Rectangle Fill="#FFEEEEEE" Height="45" Margin="150,75,-25,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Stroke="Black">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
@@ -60,8 +61,8 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <TextBlock Margin="175,75,0,0" TextWrapping="Wrap" Text="Введите пароль" VerticalAlignment="Top" Height="45" FontSize="16" Padding="15,13,0,0" FontFamily="Arial"/>
-            <TextBox x:Name="TextBoxPass" Height="45" Margin="175,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" BorderBrush="{x:Null}" SelectionBrush="#FFFF8000" Background="{x:Null}" VerticalContentAlignment="Center" FontSize="16" FontFamily="Arial" FontStyle="Italic" TextDecorations="{x:Null}" CaretBrush="#FFFF8000" BorderThickness="0" Padding="5,0,0,0"/>
+            <TextBlock x:Name="TextBlockPass_Authorization" Margin="175,75,0,0" TextWrapping="Wrap" Text="Введите пароль" VerticalAlignment="Top" Height="45" FontSize="16" Padding="15,13,0,0" FontFamily="Arial"/>
+            <PasswordBox x:Name="PasswordBoxPass_Authorization" Height="45" Margin="175,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" VerticalContentAlignment="Center" Padding="5,0,10,0" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="#FFFF8000" CaretBrush="#FFFF8000" FontFamily="Arial" FontStyle="Italic" FontSize="16" BorderThickness="0,0,0,0" GotFocus="PasswordBoxPass_Authorization_GotFocus" LostFocus="PasswordBoxPass_Authorization_LostFocus"/>
 
             <Grid Height="55" VerticalAlignment="Bottom" Margin="265,0,265,50" MouseEnter="ButtonLogin_MouseEnter" MouseLeave="ButtonLogin_MouseLeave" Cursor="Hand" MouseDown="ButtonLogin_MouseDown">
                 <Border BorderBrush="#FFFF8000" BorderThickness="3,2,3,2" Height="45" VerticalAlignment="Center" Margin="18,0" RenderTransformOrigin="0.5,0.5" Background="White">

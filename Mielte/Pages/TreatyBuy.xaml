@@ -60,7 +60,7 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Label Content="id: 999" VerticalAlignment="Top" Height="35" VerticalContentAlignment="Center" Padding="15,0,0,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Width="125"/>
+            <Label Content="{DynamicResource IdTreaty}" VerticalAlignment="Top" Height="35" VerticalContentAlignment="Center" Padding="15,0,0,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Width="125"/>
             
             <Rectangle Height="35" Stroke="Black" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="350,0,-25,120" StrokeThickness="2">
                 <Rectangle.RenderTransform>
@@ -72,7 +72,7 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Label Content="id 999 / BMW 3 серия VII (G2x)" VerticalAlignment="Top" Height="35" VerticalContentAlignment="Center" Padding="0,0,15,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" Margin="375,0,0,0"/>
+            <Label Content="{DynamicResource IdCarAndTitle}" VerticalAlignment="Top" Height="35" VerticalContentAlignment="Center" Padding="0,0,15,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" HorizontalContentAlignment="Left" HorizontalAlignment="Stretch" Margin="375,0,0,0"/>
             
             <Rectangle Height="35" Stroke="Black" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="400,50,-25,0" StrokeThickness="2">
                 <Rectangle.RenderTransform>
@@ -84,9 +84,9 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Label Content="цена: 999,000,000,000 ₽" VerticalAlignment="Top" Height="35" VerticalContentAlignment="Center" Padding="0,0,15,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" HorizontalContentAlignment="Left" Margin="425,50,0,0"/>
-            
-            <Label Content="Дата заказа: 9999-99-99" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" Padding="15,0,15,0" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="0,0,0,120" BorderThickness="0,0,0,2" BorderBrush="Black" MinWidth="225"/>
+            <Label Content="{DynamicResource Amount}" VerticalAlignment="Top" Height="35" VerticalContentAlignment="Center" Padding="0,0,15,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" HorizontalContentAlignment="Left" Margin="425,50,0,0"/>
+
+            <Label Content="{DynamicResource DateBuy}" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" Padding="15,0,15,0" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="0,0,0,120" BorderThickness="0,0,0,2" BorderBrush="Black" MinWidth="225"/>
             
             <Rectangle Height="35" Stroke="Black" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="-25,0,355,65" StrokeThickness="2" HorizontalAlignment="Stretch">
                 <Rectangle.RenderTransform>
@@ -98,8 +98,8 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Label Content="поставщик: ООО &quot;ДаймонКар&quot;" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" Padding="15,0,15,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,355,65"/>
-            <Rectangle Height="35" Stroke="Black" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="465,0,-25,65" StrokeThickness="2" HorizontalAlignment="Stretch">
+            <Label Content="{DynamicResource Supplier}" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" Padding="15,0,15,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,355,65"/>
+            <Rectangle Height="35" Stroke="Black" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="0,0,-25,65" StrokeThickness="2" HorizontalAlignment="Right" Width="360">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -109,7 +109,7 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Label Content="количество: 999,000,000" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" Padding="15,0,15,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" HorizontalContentAlignment="Center" Margin="465,0,0,65" HorizontalAlignment="Stretch"/>
+            <Label Content="{DynamicResource Price}" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" Padding="15,0,15,1" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Normal" HorizontalContentAlignment="Center" Margin="0,0,0,65" HorizontalAlignment="Right" Width="335"/>
 
             <Rectangle x:Name="ButtonBefore" Height="45" Stroke="Black" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="-25,0,410,0" StrokeThickness="2" Fill="#FFEEEEEE">
                 <Rectangle.RenderTransform>
@@ -121,8 +121,8 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Label Content="&lt;- предыдущий" Margin="0,0,405,0" VerticalAlignment="Bottom" Height="45" VerticalContentAlignment="Center" Padding="0,0,50,2" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" HorizontalContentAlignment="Right" MouseDown="ButtonBefore_MouseDown" MouseEnter="ButtonBefore_MouseEnter" MouseLeave="ButtonBefore_MouseLeave"/>
-            <Rectangle x:Name="ButtonAfter" HorizontalAlignment="Stretch" Height="45" Stroke="Black" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="410,0,-25,0" StrokeThickness="2" Fill="#FFEEEEEE">
+            <Label Content="&#10229; предыдущий" Margin="0,0,405,0" VerticalAlignment="Bottom" Height="45" VerticalContentAlignment="Center" Padding="0,0,50,2" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" HorizontalContentAlignment="Right" MouseDown="ButtonBefore_MouseDown" MouseEnter="ButtonBefore_MouseEnter" MouseLeave="ButtonBefore_MouseLeave"/>
+            <Rectangle x:Name="ButtonAfter" HorizontalAlignment="Right" Height="45" Stroke="Black" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="0,0,-25,0" StrokeThickness="2" Fill="#FFEEEEEE" Width="415">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -132,7 +132,7 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
-            <Label Content="следующий -&gt;" HorizontalAlignment="Stretch" Margin="405,0,0,0" VerticalAlignment="Bottom" Height="45" VerticalContentAlignment="Center" Padding="50,0,0,2" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" MouseDown="ButtonAfter_MouseDown" MouseEnter="ButtonAfter_MouseEnter" MouseLeave="ButtonAfter_MouseLeave"/>
+            <Label Content="следующий &#10230;" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="45" VerticalContentAlignment="Center" Padding="50,0,0,2" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" MouseDown="ButtonAfter_MouseDown" MouseEnter="ButtonAfter_MouseEnter" MouseLeave="ButtonAfter_MouseLeave" Width="395"/>
 
         </Grid>
     </Grid>

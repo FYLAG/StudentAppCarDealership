@@ -72,7 +72,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="приобрести" Margin="0,25,325,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="140" MouseDown="ButtonBuy_MouseDown" MouseEnter="ButtonBuy_MouseEnter" MouseLeave="ButtonBuy_MouseLeave" Cursor="Hand"/>
+        <Label x:Name="LabelBuy" Content="приобрести" Margin="0,25,325,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" FontSize="16" HorizontalAlignment="Right" Width="140" MouseDown="ButtonBuy_MouseDown" MouseEnter="ButtonBuy_MouseEnter" MouseLeave="ButtonBuy_MouseLeave" Cursor="Hand"/>
 
         <Grid VerticalAlignment="Center" Height="350" Margin="0,75,0,0">
             <Grid HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="ButtonBefore_MouseDown" MouseEnter="ButtonBefore_MouseEnter" MouseLeave="ButtonBefore_MouseLeave" Cursor="Hand">

@@ -26,6 +26,16 @@ namespace Mielte.Pages
     public partial class InfoBuyer : Page
     {
 
+        public string GetLogin()
+        {
+            return App.Current.Properties["LoginOfProperty"].ToString();
+        }
+
+        public string GetRole()
+        {
+            return App.Current.Properties["RoleOfProperty"].ToString();
+        }
+
         public class PersonBuyer
         {
             public string Id { get; set; }
@@ -76,17 +86,22 @@ namespace Mielte.Pages
         {
             InitializeComponent();
 
+            if (GetRole() != "Administrator" && GetRole() != "Manager")
+            {
+                ButtonTreatySale.Visibility = Visibility.Collapsed;
+                LabelTreatySale.Visibility = Visibility.Collapsed;
+            }
+
             FillingStaffList();
         }
 
         private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-
-            MessageBox.Show(e.Parameter.ToString());
-
-            ViewLicense windowLicense = new ViewLicense(e.Parameter.ToString());
-            windowLicense.Show();
-
+            if (e.Parameter.ToString() != "")
+            {
+                ViewLicense windowLicense = new ViewLicense(e.Parameter.ToString());
+                windowLicense.Show();
+            }
         }
 
         Brush color0 = new SolidColorBrush(Color.FromRgb(0, 0, 0)); // создание чёрного цвета

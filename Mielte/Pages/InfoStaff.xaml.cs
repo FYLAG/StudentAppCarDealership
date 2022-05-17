@@ -3,6 +3,7 @@ using Mielte.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -64,7 +65,7 @@ namespace Mielte.Pages
                         Gender = $"Пол: {searchGender(x.Gender)}",
                         Passport = $"Паспорт: {x.Passport}",
                         Phone = $"Телефон: {x.Phone}",
-                        Salary = $"Оклад: {x.Salary} ₽",
+                        Salary = $"Оклад: {x.Salary.ToString("N0", new CultureInfo("en-us"))}.00 ₽",
                         Position = $"Должность: {x.PositionNavigation?.Title}",
                         CarShowroom = $"Автосалон: {x.CarDealershipNavigation?.Title}"
                     });

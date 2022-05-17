@@ -46,7 +46,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="ADMIN" Margin="0,25,0,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,15,0" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" Width="205" HorizontalAlignment="Right"/>
+        <Label x:Name="LabelLoginUser" Content="ADMIN" Margin="0,25,0,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0,0,15,0" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" Width="205" HorizontalAlignment="Right"/>
         <Rectangle x:Name="ButtonAllTables" Height="35" Margin="0,25,225,0" Stroke="Black" VerticalAlignment="Top" Fill="White" RenderTransformOrigin="0.5,0.5" Width="175" HorizontalAlignment="Right">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -57,7 +57,7 @@
                 </TransformGroup>
             </Rectangle.RenderTransform>
         </Rectangle>
-        <Label Content="все таблицы" Margin="0,25,220,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" Width="185" HorizontalAlignment="Right" MouseDown="ButtonAllTables_MouseDown" MouseEnter="ButtonAllTables_MouseEnter" MouseLeave="ButtonAllTables_MouseLeave" Cursor="Hand"/>
+        <Label x:Name="LabelAllTables" Content="все таблицы" Margin="0,25,220,0" VerticalAlignment="Top" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" FontSize="16" FontFamily="Arial" FontStyle="Italic" FontWeight="Bold" Width="185" HorizontalAlignment="Right" MouseDown="ButtonAllTables_MouseDown" MouseEnter="ButtonAllTables_MouseEnter" MouseLeave="ButtonAllTables_MouseLeave" Cursor="Hand"/>
 
         <Grid VerticalAlignment="Center" Height="275" Margin="0,50,0,0">
             <Grid Height="50" VerticalAlignment="Top">
@@ -85,7 +85,7 @@
                         </TransformGroup>
                     </Rectangle.RenderTransform>
                 </Rectangle>
-                <Label Content="сотрудники" Margin="0,0,500,0" VerticalAlignment="Top" Height="50" FontSize="18" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="10,0,0,0" MouseDown="ButtonEmployees_MouseDown" MouseEnter="ButtonEmployees_MouseEnter" MouseLeave="ButtonEmployees_MouseLeave" Cursor="Hand"/>
+                <Label x:Name="LabelStaffs" Content="сотрудники" Margin="0,0,500,0" VerticalAlignment="Top" Height="50" FontSize="18" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="10,0,0,0" MouseDown="ButtonEmployees_MouseDown" MouseEnter="ButtonEmployees_MouseEnter" MouseLeave="ButtonEmployees_MouseLeave" Cursor="Hand"/>
                 <Rectangle x:Name="ButtonCatalogCars" Height="50" Margin="0,0,150,0" Stroke="Black" VerticalAlignment="Top" Fill="#FFEEEEEE" RenderTransformOrigin="0.5,0.5" Width="320" HorizontalAlignment="Right">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
@@ -109,7 +109,7 @@
                         </TransformGroup>
                     </Rectangle.RenderTransform>
                 </Rectangle>
-                <Label Content="покупатели" Margin="0,0,500,0" VerticalAlignment="Top" Height="50" FontSize="18" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="10,0,0,0" MouseDown="ButtonBuyers_MouseDown" MouseEnter="ButtonBuyers_MouseEnter" MouseLeave="ButtonBuyers_MouseLeave" Cursor="Hand"/>
+                <Label x:Name="labelBuyers" Content="покупатели" Margin="0,0,500,0" VerticalAlignment="Top" Height="50" FontSize="18" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="10,0,0,0" MouseDown="ButtonBuyers_MouseDown" MouseEnter="ButtonBuyers_MouseEnter" MouseLeave="ButtonBuyers_MouseLeave" Cursor="Hand"/>
                 <Rectangle x:Name="ButtonSuppliers" Height="50" Margin="0,0,150,0" Stroke="Black" VerticalAlignment="Top" Fill="#FFEEEEEE" RenderTransformOrigin="0.5,0.5" Width="320" HorizontalAlignment="Right">
                     <Rectangle.RenderTransform>
                         <TransformGroup>
@@ -120,7 +120,7 @@
                         </TransformGroup>
                     </Rectangle.RenderTransform>
                 </Rectangle>
-                <Label Content="поставщики" Margin="0,0,140,0" VerticalAlignment="Top" Height="50" FontSize="18" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Width="330" HorizontalAlignment="Right" MouseDown="ButtonSuppliers_MouseDown" MouseEnter="ButtonSuppliers_MouseEnter" MouseLeave="ButtonSuppliers_MouseLeave" Cursor="Hand"/>
+                <Label x:Name="labelSuppliers" Content="поставщики" Margin="0,0,140,0" VerticalAlignment="Top" Height="50" FontSize="18" FontStyle="Italic" FontWeight="Bold" FontFamily="Arial" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Width="330" HorizontalAlignment="Right" MouseDown="ButtonSuppliers_MouseDown" MouseEnter="ButtonSuppliers_MouseEnter" MouseLeave="ButtonSuppliers_MouseLeave" Cursor="Hand"/>
             </Grid>
             <Grid Height="50" VerticalAlignment="Top" Margin="0,225,0,0">
                 <Rectangle x:Name="ButtonOtherUser" Height="50" Margin="-25,0,225,0" Stroke="Black" VerticalAlignment="Top" Fill="#FFEEEEEE" RenderTransformOrigin="0.5,0.5">
