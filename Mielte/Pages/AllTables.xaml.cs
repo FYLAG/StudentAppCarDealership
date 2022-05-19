@@ -73,15 +73,6 @@ namespace Mielte.pages
 
         gavrilov_kpContext DataBase = gavrilov_kpContext.GetContext();
 
-        public AllTables()
-        {
-            InitializeComponent();
-
-            ComboBoxTables.DataContext = new ClassTables();
-
-            DataGridTables.ItemsSource = DataBase.Carcatalog.ToList();
-        }
-
         private void ComboBoxTables_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -146,6 +137,11 @@ namespace Mielte.pages
                     break;
                 case "employees":
                     DataGridTables.ItemsSource = DataBase.Employees.ToList();
+
+                    /*DataGridTables.ItemsSource = DataBase.Employees.Select(x => new { x.IdEmployees, x.Surname, x.Name,
+                                                                            x.Patronymic, x.Gender, x.DateBirth,
+                                                                            x.Passport, x.Phone, x.Salary,
+                                                                            x.Position, x.CarDealership, x.Address }).ToList();*/
                     break;
                 case "countries":
                     DataGridTables.ItemsSource = DataBase.Countries.ToList();
@@ -178,6 +174,14 @@ namespace Mielte.pages
                     DataGridTables.ItemsSource = DataBase.Salesmanagers.ToList();
                     break;
             }
+        }
+
+        public AllTables()
+        {
+            InitializeComponent();
+
+            ComboBoxTables.DataContext = new ClassTables();
+
         }
 
         Brush color0 = new SolidColorBrush(Color.FromRgb(0, 0, 0)); // создание чёрного цвета
@@ -214,9 +218,26 @@ namespace Mielte.pages
         {
             ButtonSave.Stroke = color0; // обводка блока в чёрного цвета
         }
-    }
 
-    internal class DbSet
-    {
+        private void DataGridTables_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.Key == Key.Delete)
+                {
+                    MessageBoxResult result = MessageBox.Show("Удалить выделенные элементы?", "Потдверждение", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        List<Object> a = DataGridTables.SelectedItems.Cast<Object>().ToList();
+                        a.ForEach(x => DataBase.Remove(x));
+                        DataBase.SaveChanges();
+                    }
+                }
+            }
+            catch (System.InvalidOperationException)
+            {
+                MessageBox.Show("Ошибка: изменения не были сохранены!");
+            }
+        }
     }
 }

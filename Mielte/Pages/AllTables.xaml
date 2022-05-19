@@ -10,7 +10,7 @@
 
     <Grid Background="White">
         
-        <DataGrid x:Name="DataGridTables" Margin="0,55,0,0" BorderThickness="0,1,0,0" BorderBrush="Black" FontSize="14" VerticalContentAlignment="Center"/>
+        <DataGrid x:Name="DataGridTables" Margin="0,55,0,0" BorderThickness="0,1,0,0" BorderBrush="Black" FontSize="14" VerticalContentAlignment="Center" GridLinesVisibility="All" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="#FFB4B4B4" PreviewKeyDown="DataGridTables_PreviewKeyDown"/>
         <Rectangle x:Name="ButtonBack" Height="35" Margin="0,10,-25,0" Stroke="Black" VerticalAlignment="Top" Fill="White" RenderTransformOrigin="0.5,0.5" Width="175" HorizontalAlignment="Right">
             <Rectangle.RenderTransform>
                 <TransformGroup>

@@ -189,8 +189,7 @@ namespace Mielte.Pages
                         // Добавление
                         foreach (string item in ListBoxServices.SelectedItems)
                         {
-                            MessageBox.Show($"{db.Treatiessalecars.Count()} - {ListBoxServices.Items.IndexOf(item) + 1}");
-                            db.Contractservices.Add(new Contractservices { IdContract = db.Treatiessalecars.Count() + 1, IdServices = ListBoxServices.Items.IndexOf(item) + 1 });
+                            db.Contractservices.Add(new Contractservices { IdContract = db.Treatiessalecars.Count(), IdServices = ListBoxServices.Items.IndexOf(item) + 1 });
                         }
                         db.SaveChanges();
                     }

@@ -63,7 +63,7 @@ namespace Mielte.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=localhost;database=gavrilov_kp;user=root;password=12345");
+                optionsBuilder.UseMySql("server=localhost;database=gavrilov_kp;user=root;password=QxNgMI35P1");
             }
         }
 
